@@ -11,7 +11,9 @@ describe('HandtrackerComponent', () => {
       declarations: [ HandtrackerComponent ]
     })
     .compileComponents();
+  });
 
+  beforeEach(() => {
     fixture = TestBed.createComponent(HandtrackerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
