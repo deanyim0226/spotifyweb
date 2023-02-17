@@ -1,1 +1,6 @@
-<p>thermometer works!</p>
+<div class="progress">
+
+  <div [style.background-color] = "feature.color"  [style.width] = "feature.percentageString" class="progress-bar" role="progressbar">
+  	<span class="progress-bar-text">{{feature.name}}: {{feature.percentageString}}</span>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+h1{
+	text-align: center;
+    text-align: center;
+	font-size: 70px;
+    /* color: green; */
+    background: radial-gradient(circle, rgba(0,255,0,0.6) 25%, rgba(0,0,0,1) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.main-bg{
+    border-radius: 6px;
+    border: 5px solid;
+	background: radial-gradient(circle, rgba(0, 255, 0, 0.584) 25%, rgba(0, 0, 0, 0.589) 100%);
+}
+select{
+	height: 50px;
+    border-radius: 6px 0 0 6px;
+	padding-left: 12px;
+	margin-right: 12px;
+	border: none;
+	outline: none;
+	background: transparent;
+}	
+input{
+	height: 50px;
+	border: 2px solid rgb(11, 10, 10);
+	border-radius: 0;
+	padding: 15px;
+	width: 100%;
+	border-top: none;
+	border-bottom: none;
+	outline: green;
+	background: transparent;
+}
+.btn{
+	height: 40px;
+	display: inline-flex;
+	align-items: center;
+	border-left: none;
+	margin: 0;
+	border-radius: 0 6px 6px 0;
+	background: transparent;
+	padding: 0 15px;
+	border: none;
+}

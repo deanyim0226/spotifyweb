@@ -15,6 +15,8 @@ import { ThermometerComponent } from './components/thermometer/thermometer.compo
 import { AlbumPageComponent } from './pages/album-page/album-page.component';
 import { ArtistPageComponent } from './pages/artist-page/artist-page.component';
 import { TrackPageComponent } from './pages/track-page/track-page.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -28,6 +30,7 @@ import { TrackPageComponent } from './pages/track-page/track-page.component';
     TrackListComponent,
     AboutComponent,
     SearchComponent,
+    
     ThermometerComponent,
     AlbumPageComponent,
     ArtistPageComponent,
@@ -36,7 +39,9 @@ import { TrackPageComponent } from './pages/track-page/track-page.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

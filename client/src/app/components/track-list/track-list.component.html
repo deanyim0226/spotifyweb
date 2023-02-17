@@ -1,1 +1,30 @@
-<p>track-list works!</p>
+<table class="table table-sm table-light table-striped" *ngIf="tracks">
+	<thead>
+		<tr>
+			<th scope="col">#</th>
+			<th scope="col">Track</th>
+			<th scope="col">Duration</th>
+			<!--TODO: Use *ngIf to hide if hideArtist is true-->
+			<th *ngIf = "hideArtist === false" scope="col">Primary Artist</th>
+			<!--TODO: Use *ngIf to hide if hideAlbum is true-->
+			<th *ngIf = "hideAlbum === false" scope="col">Album</th>
+		</tr>
+	</thead>
+	<tbody>
+		<!--TODO: Use *ngFor to loop over tracks-->
+		<tr *ngFor = "let track of tracks; let i = index ">
+			<!--TODO: Populate with row index (start with 1!)-->
+			<td>{{i+1}}</td>
+			<td>
+				<!--TODO: link to the endpoint for that track, display the track's name-->
+				<a [href] = "this.getUrl(track)">{{track.name}}</a>
+			</td>
+			<!--TODO: display the track's duration-->
+			<td>{{track.durationStr}}</td>
+			<!--TODO: Use *ngIf to hide if hideArtist is true; link to the first artist's endpoint and display the first artist's name-->
+			<td *ngIf = "hideArtist === false"><a [href] = "track.primaryArtistUrl" > {{track.primaryArtistName}}</a> </td>
+			<!--TODO: Use *ngIf to hide if hideAlbum is true; link to the album's endpoint and display the album's name-->
+			<td *ngIf = "hideAlbum === false"><a  [href] = "track.albumUrl"> {{track.albumName}}</a> </td>
+		</tr>
+	</tbody>
+</table>

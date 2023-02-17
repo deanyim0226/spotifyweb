@@ -1,1 +1,29 @@
-<p>search works!</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="pt-5">
+	<h1>Search Spotify</h1>
+
+<div class="d-flex justify-content-center align-items-center main-bg bg-light mt-4">
+	<!--TODO: bind select's model to searchCategory-->
+<select [(ngModel)] = "searchCategory" (change) = "search()">
+	<!--TODO: loop over searchCategories to create dropdown options-->
+	<!--populate body and text value https://www.w3schools.com/tags/att_option_selected.asp-->
+	<option *ngFor ="let searchCategory of searchCategories">
+		{{searchCategory}}</option>
+</select>
+
+<!--TODO: bind input's model to searchString-->
+<input [(ngModel)] = "searchString" (change) = "search()">
+
+<!--TODO: Call search function when the button is clicked-->
+<button (click)= "search()" class="btn">Search<i class="fa-solid fa-magnifying-glass"></i></button>
+<!--TODO: Display a carousel component if searching for an artist or album. 
+	Bind carousel's resources and give it a static carouselId.-->
+<!--TODO: Display a track-list component if searching for a track. Bind track-list's tracks.-->
+</div>
+
+<app-carousel *ngIf="searchCategory === 'artist'" [resources] = "resources" carouselId = "1"> </app-carousel>
+<app-carousel *ngIf="searchCategory === 'album'" [resources] = "resources" carouselId = "2"> </app-carousel>
+<app-track-list *ngIf="searchCategory === 'track'" [tracks] = "resources"></app-track-list>
+</div>
+ 
+ 
