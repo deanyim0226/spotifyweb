@@ -1,10 +1,41 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ArtistData } from '../../data/artist-data';
+import { TrackData } from '../../data/track-data';
+import { AlbumData } from '../../data/album-data';
+import { TrackFeature } from '../../data/track-feature';
+import { SpotifyService } from 'src/app/services/spotify.service';
 
 @Component({
   selector: 'app-track-page',
   templateUrl: './track-page.component.html',
   styleUrls: ['./track-page.component.css']
 })
-export class TrackPageComponent {
+export class TrackPageComponent implements OnInit {
+	trackId:string;
+	track:TrackData;
+  audioFeatures:TrackFeature[];
 
+  constructor(private route: ActivatedRoute, private service: SpotifyService) { }
+
+  ngOnInit() {
+  	this.trackId = this.route.snapshot.paramMap.get('id');
+  	//TODO: Inject the spotifyService and use it to get the track data and it's audio features
+    this.service.getTrack(this.trackId).then((response)=>{
+      this.track = response;
+    });
+
+    this.service.getAudioFeaturesForTrack(this.trackId).then((response)=>{
+      this.audioFeatures = response;
+  
+    });
+
+  }
+
+  getAlbumUrl(album:AlbumData){
+    return album.category + "/" + album.id;
+  }
+  getArtistUrl(artist:ArtistData){
+    return artist.category + "/" + artist.id;
+  }
 }
