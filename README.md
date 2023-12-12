@@ -1,4 +1,4 @@
---Readme document for *Dean Yim and Wafa Afridi*, *wafridi@uci.edu, donghyey@uci.edu*, *92688409, 17807237*--
+--Readme document for *Dean Yim donghyey@uci.edu*, *92688409*--
 
 1. How many assignment points do you believe you completed (replace the *'s with your numbers)?
 
